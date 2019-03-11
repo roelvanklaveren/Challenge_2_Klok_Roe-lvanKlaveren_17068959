@@ -1,0 +1,47 @@
+html,
+body {
+  height: 100%;
+  font-family: helvetica;
+	color: #FFFFFF;
+  background-image: url("Spacewallpaper.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+img {
+float: right;
+}
+
+.mydiv {
+  position:static;
+  width:125%;
+  height:125%;
+  color:black;
+  font-weight:bold;
+  animation: myanimation 25s infinite;
+  z-index: 1;
+  opacity: 0.8;
+}
+
+#mainHeading {
+	position: absolute;
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+  z-index: 0;
+  height: 750px;
+  width: 600px;
+}
+
+#secondHeading {
+	position: absolute;
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+  z-index: 0;
+}
+
+@keyframes myanimation {
+  66.6%{background-color:#003366;}
+  99.9%{background-color:#black;}
+}

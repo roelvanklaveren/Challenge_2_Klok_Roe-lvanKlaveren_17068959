@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+    <title>Clock</title>\
+      <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <img src="SpaceX-Logo.svg.png" alt="image1">
+
+  <img src="falling_star.png" alt="ster" id="mainHeading">
+
+  <script src="scripts/TweenMax.min.js"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js"></script> -->
+  <script src="scripts/main.js"></script>
+
+  <img src="sun.png" alt="zon" id="secondHeading">
+
+  <script src="scripts/TweennnMax.min.js"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js"></script> -->
+  <script src="scripts/main.js"></script>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+    }
+    div{
+      position:absolute;
+      width:600px;
+      height:100px;
+      margin:-50px -300px;
+      text-align:center;
+      top:50%;
+      left:50%;
+      color:#fff;
+      font-size:100px;
+      font-family:sans-serif;
+      text-shadow:3px 3px 5px gray;
+    }
+    section{
+      display:inline-block;
+      position:relative;
+      width:100px;
+      margin:1px;
+      box-shadow:5px 5px 5px rgba(0,0,0,0.5);
+      background-image: -webkit-linear-gradient(rgba(255, 255, 255, .2) 90%, transparent 10%, transparent);
+      background-size: 1px 10px;
+    }
+  </style>
+  <script>
+    window.onload = function(){
+      var numbers = true;
+
+      var checkZeros = function(time){
+        if (time < 10){
+          time = "0" + time;
+        }
+        return time;
+      };
+      window.animate = function(){
+        var date = new Date();
+        var hours = date.getHours();
+        var minutes = date.getMinutes();
+        var seconds = date.getSeconds();
+        var string = '';
+        document.getElementsByTagName("body")[0].style.backgroundColor = "rgba(" + hours * 10 + ", " + minutes * 4 + ", " + seconds*4 + ", 0.4)";
+        if(numbers){
+          string = "<span>" + checkZeros(hours) + "</span>:<span>" + checkZeros(minutes) + "</span>:<span>" + checkZeros(seconds) + "</span>";
+        }else{
+          string = "<section style='height:" + hours * 10 + "px;'></section><section style='height:" + minutes * 5 + "px;'></section><section style='height:" + seconds * 5 + "px;'></section>";
+        }
+        document.getElementsByTagName("div")[0].innerHTML = string;
+        setTimeout(window.animate, 50);
+      };
+      window.onclick = function(){
+        numbers = numbers ? false : true;
+      };
+      window.animate();
+    };
+
+  </script>
+  <body>
+    <div></div>
+  </body>
+  </html>
+
+  <div class="mydiv"</div>
+
+
+
+</body>
+
+</html>
